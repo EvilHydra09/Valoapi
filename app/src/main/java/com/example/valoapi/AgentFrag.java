@@ -38,7 +38,7 @@ public class AgentFrag extends Fragment {
     }
 
     private void findagent() {
-    ApiUtiles.getapApiInterface().getAgents().enqueue(new Callback<AgentPojo>() {
+    ApiUtiles.getapApiInterface().getAgents(true).enqueue(new Callback<AgentPojo>() {
         @Override
         public void onResponse(Call<AgentPojo> call, Response<AgentPojo> response) {
             if(response.isSuccessful()){

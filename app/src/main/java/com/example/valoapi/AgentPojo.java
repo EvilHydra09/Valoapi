@@ -1,5 +1,7 @@
 package com.example.valoapi;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class AgentPojo {
@@ -42,7 +44,7 @@ class Data {
 
     }
 
-    public void setAbilities(List<Abilities> abilities) {
+    public void setAbilities(ArrayList<Abilities> abilities) {
 
         this.abilities = abilities;
 
@@ -89,10 +91,18 @@ class Data {
 }
 
 class Abilities {
-
+    private  String slot;
     private String displayIcon;
     private String displayName;
     private String description;
+
+    public String getSlot() {
+        return slot;
+    }
+
+    public void setSlot(String slot) {
+        this.slot = slot;
+    }
 
     public String getDisplayIcon() {
 

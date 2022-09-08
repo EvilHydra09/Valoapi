@@ -1,12 +1,14 @@
 package com.example.valoapi;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -15,10 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> {
     ArrayList<Data> dataArrayList ;
     Context context;
+    ArrayList<Data> abilitiesArrayList;
 
     public AgentAdapter(ArrayList<Data> dataArrayList, Context context) {
         this.dataArrayList = dataArrayList;
@@ -40,7 +44,16 @@ public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Card Clicked", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context, AgentShow.class);
+                intent.putExtra("name",data.getDisplayName());
+                intent.putExtra("desc",data.getDescription());
+                intent.putExtra("image",data.getFullPortrait());
+
+
+
+
+                context.startActivity(intent);
             }
         });
     }
