@@ -1,21 +1,18 @@
-package com.example.valoapi;
+package com.example.valoapi.agent;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.valoapi.R;
+import com.example.valoapi.agent.Abilities;
+import com.example.valoapi.agent.AbilityAdapter;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class AgentShow extends AppCompatActivity {
     ArrayList<Abilities> abilitiesArrayList;

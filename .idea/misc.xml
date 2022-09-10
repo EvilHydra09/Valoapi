@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/activity_agent_show.xml" value="0.24547101449275363" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/activity_gun_show.xml" value="0.2" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/activity_show_map.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/fragment_agent.xml" value="0.24547101449275363" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/fragment_gun.xml" value="0.24547101449275363" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/fragment_map.xml" value="0.24547101449275363" />
         <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/sample_ablility.xml" value="0.24547101449275363" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/sample_gunrow.xml" value="0.24547101449275363" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/sample_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/sample_row.xml" value="0.11302083333333333" />
         <entry key="..\:/Android/Project/Valoapi/app/src/main/res/layout/activity_agent.xml" value="0.20863616930312098" />
         <entry key="..\:/Android/Project/Valoapi/app/src/main/res/layout/activity_agentshow.xml" value="0.20863616930312098" />

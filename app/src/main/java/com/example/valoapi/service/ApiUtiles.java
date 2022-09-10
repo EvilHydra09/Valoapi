@@ -1,4 +1,6 @@
-package com.example.valoapi;
+package com.example.valoapi.service;
+
+import com.example.valoapi.service.ApiInterface;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

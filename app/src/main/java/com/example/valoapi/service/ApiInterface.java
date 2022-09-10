@@ -1,6 +1,8 @@
-package com.example.valoapi;
+package com.example.valoapi.service;
 
-import java.util.ArrayList;
+import com.example.valoapi.agent.AgentPojo;
+import com.example.valoapi.gun.GunPojo;
+import com.example.valoapi.map.MapPojo;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,7 +14,10 @@ public interface ApiInterface {
     @GET("agents")
     Call<AgentPojo> getAgents(@Query("isPlayableCharacter") Boolean flag);
 
-    @GET("agents")
-    Call<AgentPojo> getabilitys();
+    @GET("weapons")
+    Call<GunPojo> getGuns();
+
+    @GET("maps")
+    Call<MapPojo> getMaps();
 
 }

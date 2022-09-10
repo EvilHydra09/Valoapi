@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.widget.Toast;
+
+import com.example.valoapi.agent.AgentFrag;
+import com.example.valoapi.gun.GunFrag;
+import com.example.valoapi.map.MapFrag;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
