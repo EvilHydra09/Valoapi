@@ -22,7 +22,7 @@ import java.util.List;
 public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> {
     ArrayList<Data> dataArrayList ;
     Context context;
-    ArrayList<Data> abilitiesArrayList;
+
 
     public AgentAdapter(ArrayList<Data> dataArrayList, Context context) {
         this.dataArrayList = dataArrayList;
