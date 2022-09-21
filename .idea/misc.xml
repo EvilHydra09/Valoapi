@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/drawable/ctr_bg.xml" value="0.192" />
+        <entry key="..\:/Android apps/Valoapi/app/src/main/res/drawable/lg_back.xml" value="0.192" />
         <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/activity_agent_show.xml" value="0.24547101449275363" />
         <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/activity_gun_show.xml" value="0.2" />
         <entry key="..\:/Android apps/Valoapi/app/src/main/res/layout/activity_show_map.xml" value="0.1" />
