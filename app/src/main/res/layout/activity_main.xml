@@ -16,7 +16,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navmenu"
+        app:textSize="15dp"
         app:textColor="#FF0000"
+        app:itemFontFamily="@font/valofont"
+        android:textAlignment="center"
+        android:elevation="10dp"
         app:iconSize="24dp"/>
 
     <FrameLayout

@@ -32,7 +32,7 @@ public class AgentShow extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         String desc = getIntent().getStringExtra("desc");
         String photo = getIntent().getStringExtra("image");
-       // abilitiesArrayList = new ArrayList<>();
+       // abilitiesArrayList = new ArrayList<>(); // Don't Use That
         abilitiesArrayList = getIntent().getParcelableArrayListExtra("data");
 
 
