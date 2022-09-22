@@ -12,19 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.valoapi.R;
+import com.example.valoapi.agent.model.Ability;
 
 import java.util.ArrayList;
 
 public class AbilityAdapter extends RecyclerView.Adapter<AbilityAdapter.AbilityViewHolder> {
-   ArrayList<Abilities> abilitiesArrayList;
+   ArrayList<Ability> abilitiesArrayList;
    Context context;
 
-    public AbilityAdapter(ArrayList<Abilities> abilitiesArrayList, Context context) {
+    public AbilityAdapter(ArrayList<Ability> abilitiesArrayList, Context context) {
         this.abilitiesArrayList = abilitiesArrayList;
         this.context = context;
     }
 
-    public AbilityAdapter(ArrayList<Abilities> abilitiesArrayList, AgentShow context) {
+    public AbilityAdapter(ArrayList<Ability> abilitiesArrayList, AgentShow context) {
     }
 
     @NonNull
@@ -37,7 +38,7 @@ public class AbilityAdapter extends RecyclerView.Adapter<AbilityAdapter.AbilityV
 
     @Override
     public void onBindViewHolder(@NonNull AbilityViewHolder holder, int position) {
-        Abilities abilities = abilitiesArrayList.get(position);
+        Ability abilities = abilitiesArrayList.get(position);
         holder.abilityname.setText(abilities.getDisplayName());
         holder.abilitydescription.setText(abilities.getDescription());
         Glide.with(context).load(abilities.getDisplayIcon()).into(holder.icon);

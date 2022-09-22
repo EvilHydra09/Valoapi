@@ -14,15 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.valoapi.R;
+import com.example.valoapi.agent.model.Datum;
 
 import java.util.ArrayList;
 
 public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> {
-    ArrayList<Data> dataArrayList ;
+    ArrayList<Datum> dataArrayList ;
     Context context;
 
 
-    public AgentAdapter(ArrayList<Data> dataArrayList, Context context) {
+    public AgentAdapter(ArrayList<Datum> dataArrayList, Context context) {
         this.dataArrayList = dataArrayList;
         this.context = context;
     }
@@ -36,7 +37,7 @@ public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Data data = dataArrayList.get(position);
+        Datum data = dataArrayList.get(position);
         holder.name.setText(data.getDisplayName());
         Glide.with(context).load(data.getFullPortrait()).into(holder.image);
         holder.cardView.setOnClickListener(new View.OnClickListener() {

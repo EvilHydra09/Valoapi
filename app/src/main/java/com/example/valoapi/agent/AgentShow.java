@@ -10,14 +10,15 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.valoapi.R;
-import com.example.valoapi.agent.Abilities;
+import com.example.valoapi.agent.model.Ability;
 import com.example.valoapi.agent.AbilityAdapter;
+import com.example.valoapi.agent.model.Ability;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
 
 public class AgentShow extends AppCompatActivity {
-    ArrayList<Abilities> abilitiesArrayList;
+    ArrayList<Ability> abilitiesArrayList;
     AbilityAdapter abilityAdapter;
     private RecyclerView recyclerability;
     @SuppressLint("ResourceAsColor")

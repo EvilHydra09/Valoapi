@@ -1,6 +1,7 @@
 package com.example.valoapi.service;
 
-import com.example.valoapi.agent.AgentPojo;
+
+import com.example.valoapi.agent.model.AgentPojo;
 import com.example.valoapi.gun.GunPojo;
 import com.example.valoapi.map.MapPojo;
 
