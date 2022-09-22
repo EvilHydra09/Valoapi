@@ -2,11 +2,23 @@
 package com.example.valoapi.agent.model;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 
-public class Ability {
+
+public class Ability implements Parcelable {
+
+    public Ability(String slot, String displayName, String description, String displayIcon) {
+        this.slot = slot;
+        this.displayName = displayName;
+        this.description = description;
+        this.displayIcon = displayIcon;
+    }
 
     @SerializedName("slot")
     @Expose
@@ -19,7 +31,26 @@ public class Ability {
     private String description;
     @SerializedName("displayIcon")
     @Expose
-    private Object displayIcon;
+    private String displayIcon;
+
+    protected Ability(Parcel in) {
+        slot = in.readString();
+        displayName = in.readString();
+        description = in.readString();
+        displayIcon = in.readString();
+    }
+
+    public static final Creator<Ability> CREATOR = new Creator<Ability>() {
+        @Override
+        public Ability createFromParcel(Parcel in) {
+            return new Ability(in);
+        }
+
+        @Override
+        public Ability[] newArray(int size) {
+            return new Ability[size];
+        }
+    };
 
     public String getSlot() {
         return slot;
@@ -45,11 +76,11 @@ public class Ability {
         this.description = description;
     }
 
-    public Object getDisplayIcon() {
+    public String getDisplayIcon() {
         return displayIcon;
     }
 
-    public void setDisplayIcon(Object displayIcon) {
+    public void setDisplayIcon(String displayIcon) {
         this.displayIcon = displayIcon;
     }
 
@@ -81,4 +112,16 @@ public class Ability {
         return sb.toString();
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(slot);
+        parcel.writeString(displayName);
+        parcel.writeString(description);
+        parcel.writeString(displayIcon);
+    }
 }

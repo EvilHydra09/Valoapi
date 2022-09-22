@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,6 +43,7 @@ public class AbilityAdapter extends RecyclerView.Adapter<AbilityAdapter.AbilityV
         holder.abilityname.setText(abilities.getDisplayName());
         holder.abilitydescription.setText(abilities.getDescription());
         Glide.with(context).load(abilities.getDisplayIcon()).into(holder.icon);
+
 
     }
 

@@ -14,7 +14,7 @@ public class AgentPojo {
     private Integer status;
     @SerializedName("data")
     @Expose
-    private List<Datum> data = null;
+    private List<Datum> data ;
 
     public Integer getStatus() {
         return status;

@@ -1,6 +1,7 @@
 package com.example.valoapi.agent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
@@ -31,8 +32,9 @@ public class AgentShow extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         String desc = getIntent().getStringExtra("desc");
         String photo = getIntent().getStringExtra("image");
-         abilitiesArrayList = getIntent().getParcelableExtra("data");
-        // ID
+       // abilitiesArrayList = new ArrayList<>();
+        abilitiesArrayList = getIntent().getParcelableArrayListExtra("data");
+
 
         TextView description = findViewById(R.id.description);
         ImageView agentphoto =findViewById(R.id.agentphoto);
@@ -46,6 +48,9 @@ public class AgentShow extends AppCompatActivity {
 
         description.setText(desc);
 
+        recyclerability.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        abilityAdapter = new AbilityAdapter(abilitiesArrayList,getApplicationContext());
+        recyclerability.setAdapter(abilityAdapter);
 
 
 

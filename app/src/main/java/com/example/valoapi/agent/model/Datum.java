@@ -1,13 +1,17 @@
 
 package com.example.valoapi.agent.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Datum {
+public class Datum implements Parcelable {
 
     @SerializedName("displayName")
     @Expose
@@ -20,7 +24,26 @@ public class Datum {
     private String fullPortrait;
     @SerializedName("abilities")
     @Expose
-    private List<Ability> abilities = null;
+    private List<Ability> abilities ;
+
+    protected Datum(Parcel in) {
+        displayName = in.readString();
+        description = in.readString();
+        fullPortrait = in.readString();
+        abilities = in.createTypedArrayList(Ability.CREATOR);
+    }
+
+    public static final Creator<Datum> CREATOR = new Creator<Datum>() {
+        @Override
+        public Datum createFromParcel(Parcel in) {
+            return new Datum(in);
+        }
+
+        @Override
+        public Datum[] newArray(int size) {
+            return new Datum[size];
+        }
+    };
 
     public String getDisplayName() {
         return displayName;
@@ -82,4 +105,16 @@ public class Datum {
         return sb.toString();
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(displayName);
+        parcel.writeString(description);
+        parcel.writeString(fullPortrait);
+        parcel.writeTypedList(abilities);
+    }
 }
