@@ -113,7 +113,24 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerability"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/learnmore"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/valofont"
+                android:text="LearnMore" />
+
         </LinearLayout>
 
 

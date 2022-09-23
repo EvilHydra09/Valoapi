@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.valoapi.R;
+import com.example.valoapi.Webview;
 import com.example.valoapi.agent.model.Ability;
 import com.example.valoapi.agent.model.Media;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -40,6 +42,7 @@ public class AgentShow extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         String desc = getIntent().getStringExtra("desc");
         String photo = getIntent().getStringExtra("image");
+        
        // abilitiesArrayList = new ArrayList<>(); // Don't Use That
         abilitiesArrayList = getIntent().getParcelableArrayListExtra("data");
         mediaArrayList = getIntent().getParcelableArrayListExtra("music");
@@ -47,6 +50,7 @@ public class AgentShow extends AppCompatActivity {
 
 
         TextView description = findViewById(R.id.description);
+        TextView Learnmore = findViewById(R.id.learnmore);
         ImageView agentphoto =findViewById(R.id.agentphoto);
         recyclerability = findViewById(R.id.recyclerability);
         CollapsingToolbarLayout collapsingToolbarLayout  = findViewById(R.id.collapingtoolbar);
@@ -63,13 +67,23 @@ public class AgentShow extends AppCompatActivity {
         abilityAdapter = new AbilityAdapter(abilitiesArrayList,getApplicationContext());
         recyclerability.setAdapter(abilityAdapter);
 
+        
 
-
-
+        // Sound Work
         volume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 playAudio();
+            }
+        });
+        
+        // Learn More
+        Learnmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AgentShow.this, Webview.class);
+                intent.putExtra("url","https://playvalorant.com/en-us/agents/"+name+"/");
+                startActivity(intent);
             }
         });
 
