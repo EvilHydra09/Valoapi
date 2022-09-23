@@ -1,5 +1,6 @@
 package com.example.valoapi.agent;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -8,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -18,9 +18,9 @@ import com.bumptech.glide.Glide;
 import com.example.valoapi.R;
 import com.example.valoapi.agent.model.Ability;
 import com.example.valoapi.agent.model.Datum;
+import com.example.valoapi.agent.model.Media;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> {
     ArrayList<Datum> dataArrayList ;
@@ -39,6 +39,7 @@ public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> 
         return new ViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Datum data = dataArrayList.get(position);
@@ -58,6 +59,11 @@ public class AgentAdapter extends RecyclerView.Adapter<AgentAdapter.ViewHolder> 
                 for (int i =0 ;i<abilities.size();i++){
                     Log.d("List","Item"+abilities.get(i));
                 }
+                ArrayList<Media> media =(ArrayList<Media>) data.getVoiceLine().getMediaList();
+                for(int i = 0;i<media.size();i++){
+                    Log.d("music","Music"+media.get(i));
+                }
+                intent.putParcelableArrayListExtra("music",media);
 
 
 

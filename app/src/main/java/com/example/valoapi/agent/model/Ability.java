@@ -8,17 +8,8 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 
-
-public class Ability implements Parcelable {
-
-    public Ability(String slot, String displayName, String description, String displayIcon) {
-        this.slot = slot;
-        this.displayName = displayName;
-        this.description = description;
-        this.displayIcon = displayIcon;
-    }
+public class Ability  implements Parcelable {
 
     @SerializedName("slot")
     @Expose
